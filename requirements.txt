@@ -1,0 +1,8 @@
+PyQt6>=6.6.0
+yt-dlp>=2026.10.21
+curl_cffi>=0.16.0
+cffi>=2.0.0
+Pillow>=10.0.0
+mutagen>=1.47.0
+requests>=2.31.0
+pyinstaller>=6.0.0

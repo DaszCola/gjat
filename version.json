@@ -1,0 +1,16 @@
+{
+  "version": "1.4.2",
+  "title": "Gjat Downloader! v1.4.2 - Obsidian Redesign",
+  "release_date": "2026-10-25",
+  "download_url": "https://github.com/DaszCola/gjat/releases/download/1.4.2/GjatDownloader-Setup.msi",
+  "exe_download_url": "https://github.com/DaszCola/gjat/releases/download/1.4.2/GjatDownloader.exe",
+  "notes": [
+    "✨ Complete Render.com Obsidian aesthetic UI overhaul",
+    "💜 Deep pitch-black obsidian backgrounds with electric violet & royal purple accents",
+    "⚡ Integrated modern Omnibar with instant clipboard paste & hotkey (Ctrl+V)",
+    "🎯 Redesigned download cards with slim gradient progress bars & status chips",
+    "🎬 Full FFmpeg & FFprobe bundled directly inside the installer — zero missing dependency issues",
+    "🚀 yt-dlp core engine v2026.10.21 with full YouTube decryption",
+    "🛡️ Deno JS runtime solving all YouTube challenges and n-sig checks bundled"
+  ]
+}

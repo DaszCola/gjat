@@ -1,0 +1,129 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package
+    Name="Gjat Downloader!"
+    Manufacturer="Gjat Soft"
+    Version="1.4.2"
+    UpgradeCode="B9A42F98-84CE-4B45-985A-61F92B30D911"
+    Scope="perUser">
+
+    <MajorUpgrade
+      AllowSameVersionUpgrades="yes"
+      DowngradeErrorMessage="A newer version of Gjat Downloader! is already installed." />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Application Icon -->
+    <Icon Id="AppIcon" SourceFile="app_icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/DaszCola/gjat" />
+    <Property Id="ARPCOMMENTS" Value="High-performance YouTube, Channel &amp; Media Downloader themed in royal purple." />
+
+    <!-- Target Installation Directory: %LOCALAPPDATA%\Programs\GjatDownloader -->
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="ProgramsFolder" Name="Programs">
+        <Directory Id="INSTALLFOLDER" Name="GjatDownloader">
+          <Component Id="AppRegistryAndFolder" Guid="C5B8109A-4833-4DF7-A0FE-37F1668B8F20">
+            <RegistryValue
+              Root="HKCU"
+              Key="Software\GjatSoft\GjatDownloader"
+              Name="InstallPath"
+              Type="string"
+              Value="[INSTALLFOLDER]"
+              KeyPath="yes" />
+            <RemoveFolder Id="CleanUpInstallFolder" On="uninstall" />
+          </Component>
+          
+          <Component Id="MainExeComponent" Guid="D4B2319A-99A1-4F23-B241-118822A9F182">
+            <RegistryValue
+              Root="HKCU"
+              Key="Software\GjatSoft\GjatDownloader"
+              Name="ExeInstalled"
+              Type="integer"
+              Value="1"
+              KeyPath="yes" />
+            <File Id="GjatDownloaderExe" Source="dist\GjatDownloader\GjatDownloader.exe" />
+          </Component>
+
+          <Directory Id="INTERNALFOLDER" Name="_internal" />
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+
+    <!-- Start Menu Shortcut -->
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Component Id="StartMenuShortcutComponent" Guid="A72E448F-7128-48F9-A924-E8591873CA41">
+        <Shortcut
+          Id="AppStartMenuShortcut"
+          Name="Gjat Downloader!"
+          Description="Fast and modern media downloader"
+          Target="[INSTALLFOLDER]GjatDownloader.exe"
+          WorkingDirectory="INSTALLFOLDER"
+          Icon="AppIcon" />
+        <RegistryValue
+          Root="HKCU"
+          Key="Software\GjatSoft\GjatDownloader"
+          Name="StartMenuShortcut"
+          Type="integer"
+          Value="1"
+          KeyPath="yes" />
+      </Component>
+    </StandardDirectory>
+
+    <!-- Desktop Shortcut -->
+    <StandardDirectory Id="DesktopFolder">
+      <Component Id="DesktopShortcutComponent" Guid="E24B3519-2164-428E-BC55-9430489E5F92">
+        <Shortcut
+          Id="AppDesktopShortcut"
+          Name="Gjat Downloader!"
+          Description="Fast and modern media downloader"
+          Target="[INSTALLFOLDER]GjatDownloader.exe"
+          WorkingDirectory="INSTALLFOLDER"
+          Icon="AppIcon" />
+        <RegistryValue
+          Root="HKCU"
+          Key="Software\GjatSoft\GjatDownloader"
+          Name="DesktopShortcut"
+          Type="integer"
+          Value="1"
+          KeyPath="yes" />
+      </Component>
+    </StandardDirectory>
+
+    <!-- Bundle all internal libraries and modules -->
+    <ComponentGroup Id="AppFiles" Directory="INTERNALFOLDER">
+      <Files Include="dist\GjatDownloader\_internal\**" />
+    </ComponentGroup>
+
+    <!-- Graphical User Interface Setup Wizard -->
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+    <WixVariable Id="WixUIDialogBmp" Value="installer_assets\dialog.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="installer_assets\banner.bmp" />
+
+    <UI>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Condition="NOT Installed" />
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" />
+    </UI>
+
+    <!-- Auto-launch Gjat Downloader! on install/update finish -->
+    <CustomAction
+      Id="LaunchAppOnExit"
+      FileRef="GjatDownloaderExe"
+      ExeCommand=""
+      Return="asyncNoWait" />
+
+    <InstallExecuteSequence>
+      <Custom Action="LaunchAppOnExit" After="InstallFinalize" Condition="NOT REMOVE" />
+    </InstallExecuteSequence>
+
+    <!-- Features -->
+    <Feature Id="MainFeature" Title="Gjat Downloader!" Level="1">
+      <ComponentRef Id="AppRegistryAndFolder" />
+      <ComponentRef Id="MainExeComponent" />
+      <ComponentGroupRef Id="AppFiles" />
+      <ComponentRef Id="StartMenuShortcutComponent" />
+      <ComponentRef Id="DesktopShortcutComponent" />
+    </Feature>
+  </Package>
+</Wix>
