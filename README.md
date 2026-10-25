@@ -5,34 +5,34 @@
 <h1 align="center">Gjat Downloader!</h1>
 
 <p align="center">
-  Prosty, szybki i ładny program do pobierania filmów i muzyki z internetu (YouTube, TikTok i wielu innych stron).
+  A simple, fast, and sleek program for downloading videos and music from the web (YouTube, TikTok, and many other sites).
 </p>
 
 ---
 
-## Co to jest?
+## What is this?
 
-**Gjat Downloader** to aplikacja na Windowsa, która pozwala pobierać wideo lub samą muzykę bez reklam, bez podejrzanych stron w przeglądarce i bez limitów prędkości.
+**Gjat Downloader** is a Windows desktop app that lets you download videos or extract audio with zero ads, no shady browser websites, and no speed caps.
 
-Wklejasz link, wybierasz co chcesz (albo klikasz jeden przycisk) i gotowe.
-
----
-
-## Co potrafi?
-
-* **Pobieranie z YouTube i TikToka** – radzi sobie z normalnymi filmami, YouTube Shorts oraz TikTokiem.
-* **Dowolna jakość** – od 4K i Full HD (1080p/60fps) po szybkie MP4 w mniejszym rozmiarze.
-* **Pobieranie do MP3** – wyciąga sam dźwięk w wysokiej jakości (320 kbps).
-* **Czyste nazwy plików** – zapisuje pliki normalnie jako `Tytuł.mp4`, bez brzydkich dopisków typu `[ql-wvCkTARM]`.
-* **Całe playlisty i kanały** – wklejasz link do kanału lub playlisty i pobierasz wszystko hurtem.
-* **Tryb Smart (1-kliknięcie)** – ustawiasz raz preferowaną jakość i pobierasz jednym kliknięciem bez pytania o format za każdym razem.
-* **Wszystko w zestawie** – ma wbudowany silnik FFmpeg, więc nie musisz niczego ręcznie instalować ani konfigurować w systemie.
-* **Ciemny motyw** – interfejs w czarno-fioletowym stylu (Obsidian & Purple), bez białych oślepiających okienek.
+Just paste a link, choose what you want (or click a single button), and you're good to go.
 
 ---
 
-## 🚀 Jak zainstalować?
+## Features
 
-1. Przejdź do zakładki [Releases](https://github.com/DaszCola/gjat/releases).
-2. Pobierz plik instalatora: **`GjatDownloader-Setup.msi`**.
-3. Uruchom go – instalacja zajmuje kilka sekund. Program sam doda skrót na Pulpicie i w Menu Start.
+* **YouTube & TikTok Support** – effortlessly handles regular videos, YouTube Shorts, and TikToks.
+* **Any Quality** – from 4K and Full HD (1080p/60fps) to fast, lightweight MP4 files.
+* **Download to MP3** – extracts crisp audio in high quality (up to 320 kbps).
+* **Clean Filenames** – saves files cleanly as `Title.mp4`, without ugly trailing IDs like `[ql-wvCkTARM]`.
+* **Full Playlists & Channels** – paste a channel or playlist link to batch download everything at once.
+* **Smart Mode (1-Click)** – set your preferred format once and download instantly with a single click.
+* **All-in-One** – includes a built-in FFmpeg engine out of the box; no manual system setup required.
+* **Dark Theme** – styled in an Obsidian & Electric Purple aesthetic that won't blind your eyes.
+
+---
+
+## 🚀 How to Install?
+
+1. Head over to the [Releases](https://github.com/DaszCola/gjat/releases) section.
+2. Download the installer file: **`GjatDownloader-Setup.msi`**.
+3. Run it – installation takes just a few seconds and automatically creates Desktop & Start Menu shortcuts.
