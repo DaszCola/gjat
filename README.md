@@ -10,7 +10,7 @@
 
 ---
 
-## ⚡ Co to jest?
+## Co to jest?
 
 **Gjat Downloader** to aplikacja na Windowsa, która pozwala pobierać wideo lub samą muzykę bez reklam, bez podejrzanych stron w przeglądarce i bez limitów prędkości.
 
@@ -18,7 +18,7 @@ Wklejasz link, wybierasz co chcesz (albo klikasz jeden przycisk) i gotowe.
 
 ---
 
-## ✨ Co potrafi?
+## Co potrafi?
 
 * **Pobieranie z YouTube i TikToka** – radzi sobie z normalnymi filmami, YouTube Shorts oraz TikTokiem.
 * **Dowolna jakość** – od 4K i Full HD (1080p/60fps) po szybkie MP4 w mniejszym rozmiarze.
@@ -36,25 +36,3 @@ Wklejasz link, wybierasz co chcesz (albo klikasz jeden przycisk) i gotowe.
 1. Przejdź do zakładki [Releases](https://github.com/DaszCola/gjat/releases).
 2. Pobierz plik instalatora: **`GjatDownloader-Setup.msi`**.
 3. Uruchom go – instalacja zajmuje kilka sekund. Program sam doda skrót na Pulpicie i w Menu Start.
-
----
-
-## 🛠️ Uruchomienie z kodu (dla twórców)
-
-Jeśli chcesz odpalić projekt bezpośrednio z kodu źródłowego:
-
-### Wymagania:
-* Python 3.11 lub nowszy
-* Zainstalowane biblioteki
-
-### Krok po kroku:
-```bash
-# 1. Klonujesz repozytorium
-git clone https://github.com/DaszCola/gjat.git
-cd gjat
-
-# 2. Instalujesz wymagania
-pip install PyQt6 yt-dlp curl_cffi Pillow mutagen requests
-
-# 3. Odpalasz program
-python main.py
